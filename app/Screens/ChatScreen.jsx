@@ -21,6 +21,7 @@ export default function ChatScreen() {
         return unsubscribe
     }, [])
 
+
     async function sendMessage() {
         if (!text.trim()) return
         try {
@@ -38,7 +39,7 @@ export default function ChatScreen() {
     }
 
     return (
-        <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined} keyboardVerticalOffset={80}>
+        <KeyboardAvoidingView style={{ flex: 1, backgroundColor: "#7384edff" }} behavior={Platform.OS === 'ios' ? 'padding' : undefined} keyboardVerticalOffset={80}>
             <FlatList
                 ref={flatRef}
                 data={messages}
@@ -46,7 +47,7 @@ export default function ChatScreen() {
                 renderItem={({ item }) => <MessageBubble message={item} myUid={auth.currentUser?.uid} />}
                 contentContainerStyle={{ padding: 12 }}
             />
-            <View style={{ flexDirection: 'row', padding: 8, borderTopWidth: 1, borderColor: '#eee' }}>
+            <View style={{ flexDirection: 'row', padding: 8, borderTopWidth: 1, borderColor: '#ea2a2aff' }}>
                 <TextInput
                     style={{ flex: 1, paddingHorizontal: 12, paddingVertical: 8, borderRadius: 20, backgroundColor: '#f2f2f2' }}
                     placeholder="Type a message"
