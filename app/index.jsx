@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { useAuth } from "../context/AuthContext";
-import { Link } from "expo-router";
+import { router, Link } from "expo-router";
 import Button from "../components/Button";
 
 export default function Index() {
