@@ -2,9 +2,6 @@ import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { useAuth } from "../context/AuthContext";
 import { Link } from "expo-router";
-
-
-
 import Button from "../components/Button";
 
 export default function Index() {
@@ -15,12 +12,19 @@ export default function Index() {
             <Text style={styles.text}>
                 {user ? `Welcome ${user.email}` : "Welcome to Polo Chat!"}
             </Text>
-            <TouchableOpacity style={styles.btn}>
+            <TouchableOpacity style={styles.btn}
+                onPress={() => {
+                    if (user) {
+                        router.push("/chat");
+                    } else {
+                        router.push("/login");
+                    }
+                }}>
                 <Text style={styles.btnText}>
-                    {user ? "Go to Chat" : "Login or Sign Up"}
+                    {user ? "Go to Chat" : "Login or SignUp"}
                 </Text>
             </TouchableOpacity>
-            <Link href="/login">Login / Sign Up</Link>
+
         </View>
     );
 }
