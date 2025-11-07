@@ -14,7 +14,7 @@
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
     "app/components/MessageBubble.jsx",
-    "firebaseConfig.js",
+    "app/services/firebaseConfig.js",
     "app/Screens/ChatScreen.jsx"
   ]
 }
