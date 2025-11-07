@@ -1,6 +1,10 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { useAuth } from "../context/AuthContext";
+import { Link } from "expo-router";
+
+
+
 import Button from "../components/Button";
 
 export default function Index() {
@@ -16,6 +20,7 @@ export default function Index() {
                     {user ? "Go to Chat" : "Login or Sign Up"}
                 </Text>
             </TouchableOpacity>
+            <Link href="/login">Login / Sign Up</Link>
         </View>
     );
 }
