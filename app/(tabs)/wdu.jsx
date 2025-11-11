@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Stats from '../../components/card';
 
+//style this
 
 const Wdu = () => {
     const [doing, setDoing] = useState("(Nigger do something)");
