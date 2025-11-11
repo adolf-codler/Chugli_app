@@ -1,7 +1,7 @@
 // app/chat.jsx
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import { AuthProvider, useAuth } from "../context/AuthContext";
+import { AuthProvider, useAuth } from "../../context/AuthContext";
 
 export default function Chat() {
     const { islog, user, logout } = useAuth();

@@ -1,10 +1,11 @@
-// app/login.jsx
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from "react-native";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../services/firebaseConfig";
+import { router } from "expo-router"; // ✅ import router
 
 export default function LoginScreen() {
+    const [UID, setUID] = useState("");
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
     const [isSignup, setIsSignup] = useState(false);
@@ -20,6 +21,9 @@ export default function LoginScreen() {
                 await signInWithEmailAndPassword(auth, email, pass);
                 Alert.alert("Logged in!");
             }
+
+            // ✅ Navigate after success
+            router.replace("/(tabs)/chat");
         } catch (err) {
             console.log(err);
             Alert.alert("Auth error", err.message);
@@ -29,6 +33,15 @@ export default function LoginScreen() {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>{isSignup ? "Sign Up" : "Log In"}</Text>
+
+            {isSignup && (
+                <TextInput
+                    style={styles.input}
+                    placeholder="Username"
+                    value={UID}
+                    onChangeText={setUID}
+                />
+            )}
 
             <TextInput
                 style={styles.input}
