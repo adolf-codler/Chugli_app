@@ -15,7 +15,7 @@ export default function LoginScreen() {
 
         try {
             if (isSignup) {
-                await createUserWithEmailAndPassword(auth, email, pass);
+                await createUserWithEmailAndPassword(auth, email, pass, UID);
                 Alert.alert("Account created!");
             } else {
                 await signInWithEmailAndPassword(auth, email, pass);

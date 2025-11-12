@@ -6,7 +6,7 @@ const Stats = (props) => {
     return (
 
 
-        <TouchableOpacity style={styles.View} onPress={() => props.function(props.doing)}>
+        <TouchableOpacity style={styles.To} onPress={() => props.function(props.doing)}>
             <Text style={styles.Text}>{props.doing}</Text>
         </TouchableOpacity>
 
@@ -15,7 +15,7 @@ const Stats = (props) => {
 
 export default Stats
 const styles = StyleSheet.create({
-    View: {
+    To: {
         height: 100,
         width: 100,
         borderWidth: 2,
@@ -23,9 +23,13 @@ const styles = StyleSheet.create({
         margin: 10,
         justifyContent: 'center',
         alignItems: 'center',
+        padding: 3,
+
     },
     Text: {
         fontSize: 24,
-        color: "white"
+        color: "white",
+        textAlign: "center",
+        textAlignVertical: "center",
     },
 })

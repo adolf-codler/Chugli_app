@@ -1,4 +1,3 @@
-// app/(tabs)/_layout.jsx
 import React from "react";
 import { Tabs, Redirect } from "expo-router";
 import { useAuth } from "../../context/AuthContext";
@@ -18,8 +17,8 @@ export default function TabsLayout() {
             }}
         >
             <Tabs.Screen name="wdu" options={{ title: "WDU" }} />
-            <Tabs.Screen name="chat" options={{ title: "Chat 💬" }} />
-            <Tabs.Screen name="setting" options={{ title: "Settings ⚙️" }} />
+            <Tabs.Screen name="friends" options={{ title: "Friends" }} />
+            <Tabs.Screen name="setting" options={{ title: "Profile" }} />
         </Tabs>
     );
 }
